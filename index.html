@@ -477,7 +477,7 @@ const EXAM_EVENTS = {
 };
 /** ================== 核心状态与引擎 ================== */
 let State = {
-    week: 1, month: 8, year: 2025, money: 0, ap: 3, maxAp: 3, diff: 'normal', isGraduated: false, isMockExam: false,
+    week: 1, month: 8, year: 2025, money: 0, ap: 10, maxAp: 10, diff: 'normal', isGraduated: false, isMockExam: false,
     weather: {i:'☀️', n:'晴朗', eff:''}, season: '秋',
     fac: { desk: 0, tech: 0, ac: 0 },
     tempAlloc: {},
@@ -550,7 +550,7 @@ const Game = {
             return; }
         }
 
-        if(State.ap < 1 && !State.isGraduated) return alert("AP 不足！");
+        if(State.ap < -100 && !State.isGraduated) return alert("AP 不足！");
         let activeCount = State.students.filter(s=>s.sickTimer===0).length;
         if(activeCount === 0) return alert("全班都病假了！");
 
