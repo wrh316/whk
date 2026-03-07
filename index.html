@@ -695,8 +695,8 @@ const Game = {
             if(State.month > 12) { State.month = 1; State.year++; }
             this.updateWeather();
             if(State.month === 5 && State.year === 2026) {
-                State.maxAp = 4;
-                this.log("🔥 进入五月冲刺期！大家进入狂暴状态，每周获得 4 点行动力！", "[冲刺开启]");
+                State.maxAp = 100;
+                this.log("🔥 进入五月冲刺期！大家进入狂暴状态，每周获得 100 点行动力！", "[冲刺开启]");
                 State.students.forEach(s=>s.stress+=20);
                 this.prepareExam("四月调考");
                 return;
@@ -1077,7 +1077,7 @@ area.innerHTML = `<div class="log-entry">
 },
 
     updateUI() {
-        let limit = State.diff === 'hard' ? 150 : 180;
+        let limit = State.diff === 'hard' ? 1000000 : 180;
         for (let i = 0; i < State.students.length; i++) {
             if (State.students[i].stress >= limit) {
                 alert(`【重大事故】${State.students[i].name} 压力达到 ${Math.round(State.students[i].stress)}%，承受不住选择了跳楼！\n\n发生严重校园安全事故，你的教师资格证被吊销，游戏强制结束。`);
